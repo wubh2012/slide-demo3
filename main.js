@@ -46,11 +46,11 @@ function goToSlide(index) {
     log('最后一个到第一个')
 
     $slidelist.css({
-      'transform': `translate(-${($slideDots.length + 1) * 680}px)`
+      'transform': `translateX(-${($slideDots.length + 1) * 680}px)`
     }).one('transitionend', function () {
       $slidelist.hide().offset()
       $slidelist.css({
-        'transform': `translate(-${(index + 1) * 680}px)`
+        'transform': `translateX(-${(index + 1) * 680}px)`
       }).show()
     })
 
@@ -58,17 +58,17 @@ function goToSlide(index) {
     log('从第一个到最后一个')
 
     $slidelist.css({
-      'transform': `translate(0px)`
+      'transform': `translateX(0px)`
     }).one('transitionend', function () {
       $slidelist.hide().offset()
       $slidelist.css({
-        'transform': `translate(-${(index + 1) * 680}px)`
+        'transform': `translateX(-${(index + 1) * 680}px)`
       }).show()
     })
 
   } else {
     $slidelist.css({
-      'transform': `translate(-${ (index+1) * 680}px)`
+      'transform': `translateX(-${ (index+1) * 680}px)`
     })
   }
   n = index
@@ -94,7 +94,7 @@ let init = function () {
   $slidelist.append($firstCopy)
 
   $slidelist.css({
-    'transform': `translate(-${(n + 1) * 680}px)`
+    'transform': `translateX(-${(n + 1) * 680}px)`
   })
 
   // 切换页面后停止计时器

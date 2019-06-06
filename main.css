@@ -34,9 +34,11 @@ ol {
 }
 
 .slide>.slide-list img {
+  display: inline-block;
   width: 680px;
   height: 360px;
 }
+
 
 .slide>.btn {
   position: absolute;
