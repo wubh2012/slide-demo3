@@ -46,11 +46,11 @@ function goToSlide(index) {
     log('最后一个到第一个')
 
     $slidelist.css({
-      'transform': `translateX(-${($slideDots.length + 1) * 680}px)`
+      'transform': `translate3d(-${($slideDots.length + 1) * 680}px, 0, 0)`
     }).one('transitionend', function () {
       $slidelist.hide().offset()
       $slidelist.css({
-        'transform': `translateX(-${(index + 1) * 680}px)`
+        'transform': `translate3d(-${(index + 1) * 680}px, 0, 0)`
       }).show()
     })
 
@@ -58,17 +58,17 @@ function goToSlide(index) {
     log('从第一个到最后一个')
 
     $slidelist.css({
-      'transform': `translateX(0px)`
+      'transform': `translate3d(0px, 0, 0)`
     }).one('transitionend', function () {
       $slidelist.hide().offset()
       $slidelist.css({
-        'transform': `translateX(-${(index + 1) * 680}px)`
+        'transform': `translate3d(-${(index + 1) * 680}px, 0, 0)`
       }).show()
     })
 
   } else {
     $slidelist.css({
-      'transform': `translateX(-${ (index+1) * 680}px)`
+      'transform': `translate3d(-${ (index+1) * 680}px, 0, 0)`
     })
   }
   n = index
@@ -94,7 +94,7 @@ let init = function () {
   $slidelist.append($firstCopy)
 
   $slidelist.css({
-    'transform': `translateX(-${(n + 1) * 680}px)`
+    'transform': `translate3d(-${(n + 1) * 680}px, 0, 0)`
   })
 
 }
